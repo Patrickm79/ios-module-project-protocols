@@ -3,7 +3,7 @@ import Foundation
 //: ## Step 1
 //: Create an enumeration for the value of a playing card. The values are: `ace`, `two`, `three`, `four`, `five`, `six`, `seven`, `eight`, `nine`, `ten`, `jack`, `queen`, and `king`. Set the raw type of the enum to `Int` and assign the ace a value of `1`.
 
-enum Rank: Int {
+enum Rank: Int, CaseIterable {
     
     case ace = 1
     case two, three, four, five, six, seven, eight, nine, ten
@@ -33,19 +33,19 @@ extension Rank: CustomStringConvertible {
 }
 //: ## Step 7
 //: In the rank enum, add a static computed property that returns all the ranks in an array. Name this property `allRanks`. This is needed because you can't iterate over all cases from an enum automatically.
-extension Rank: CaseIterable {
-
-    func allValue() -> [Rank] {
-        var allRanks = [Rank]()
-
-        Rank.allCases.forEach {
-            let rank = $0
-            allRanks.append(rank)
-        }
-        return allRanks
-    }
-}
-
+//extension Rank: CaseIterable {
+//
+//    func allValue() -> [Rank] {
+//        var allRanks = [Rank]()
+//
+//        Rank.allCases.forEach {
+//            let rank = $0
+//            allRanks.append(rank)
+//        }
+//        return allRanks
+//    }
+//}
+//
 
 
 
@@ -69,7 +69,7 @@ extension Rank: Comparable {
 }
 //: ## Step 3
 //: Create an enum for the suit of a playing card. The values are `hearts`, `diamonds`, `spades`, and `clubs`. Use a raw type of `String` for this enum (this will allow us to get a string version of the enum cases for free, no use of `CustomStringConvertible` required).
-enum CardSuit: String {
+enum CardSuit: String, CaseIterable {
     case Hearts
     case Diamonds
     case Spades
@@ -78,18 +78,18 @@ enum CardSuit: String {
 
 //: ## Step 8
 //: In the suit enum, add a static computed property that returns all the suits in an array. Name this property `allSuits`.
-extension CardSuit: CaseIterable {
-
-    func allSuits() -> [CardSuit] {
-        var allSuits = [CardSuit]()
-
-        CardSuit.allCases.forEach {
-            let suit = $0
-            allSuits.append(suit)
-        }
-        return allSuits
-    }
-}
+//extension CardSuit: CaseIterable {
+//
+//    func allSuits() -> [CardSuit] {
+//        var allSuits = [CardSuit]()
+//
+//        CardSuit.allCases.forEach {
+//            let suit = $0
+//            allSuits.append(suit)
+//        }
+//        return allSuits
+//    }
+//}
 
 
 //: ## Step 4
