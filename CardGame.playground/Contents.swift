@@ -209,7 +209,7 @@ class HighLow: CardGame {
             delegate?.game(player1DidDraw: player1Card, player2DidDraw: player2Card)
             
             if(player1Card.value == player2Card.value) {
-                print("Round ends with a tie of \(player1Card.value)")
+                print("Round ends with a tie of \(player1Card.value) of \(player1Card.suit)")
             } else if (player2Card < player1Card) {
                 print("Player 1 wins with \(player1Card.value) of \(player1Card.suit)")
                 player1Score += 1
